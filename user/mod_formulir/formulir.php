@@ -1,5 +1,5 @@
 <?php
-require 'D:/laragon/www/CINTA/config/database.php';
+require 'C:/xampp/htdocs/CINTA/config/database.php';
 
 // Fungsi untuk membersihkan input
 function bersihkanInput($data, $koneksi)
@@ -154,16 +154,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             $lama = mysqli_fetch_assoc($query);
             if (!empty($lama['akta'])) {
-                $file_lama = realpath(__DIR__ . '/../../' . $lama['akta']);
+                $file_lama = realpath(_DIR_ . '/../../' . $lama['akta']);
                 if ($file_lama && is_file($file_lama)) {
                     unlink($file_lama);
                 }
             }
 
-            $dir = realpath(__DIR__ . '/../../assets/upload/akta');
+            $dir = realpath(_DIR_ . '/../../assets/upload/akta');
             if (!$dir) {
-                mkdir(__DIR__ . '/../../assets/upload/akta', 0777, true);
-                $dir = realpath(__DIR__ . '/../../assets/upload/akta');
+                mkdir(_DIR_ . '/../../assets/upload/akta', 0777, true);
+                $dir = realpath(_DIR_ . '/../../assets/upload/akta');
             }
 
             $dest = $dir . "/akta{$id}.{$ext}";
@@ -183,16 +183,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             $lama = mysqli_fetch_assoc($query);
             if (!empty($lama['kk'])) {
-                $file_lama = realpath(__DIR__ . '/../../' . $lama['kk']);
+                $file_lama = realpath(_DIR_ . '/../../' . $lama['kk']);
                 if ($file_lama && is_file($file_lama)) {
                     unlink($file_lama);
                 }
             }
 
-            $dir = realpath(__DIR__ . '/../../assets/upload/kk');
+            $dir = realpath(_DIR_ . '/../../assets/upload/kk');
             if (!$dir) {
-                mkdir(__DIR__ . '/../../assets/upload/kk', 0777, true);
-                $dir = realpath(__DIR__ . '/../../assets/upload/kk');
+                mkdir(_DIR_ . '/../../assets/upload/kk', 0777, true);
+                $dir = realpath(_DIR_ . '/../../assets/upload/kk');
             }
 
             $dest = $dir . "/kk{$id}.{$ext}";
@@ -214,16 +214,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $lama = mysqli_fetch_assoc($query);
 
             if (!empty($lama['ktp_ortu'])) {
-                $file_lama = realpath(__DIR__ . '/../../' . $lama['ktp_ortu']);
+                $file_lama = realpath(_DIR_ . '/../../' . $lama['ktp_ortu']);
                 if ($file_lama && is_file($file_lama)) {
                     unlink($file_lama);
                 }
             }
 
-            $dir = realpath(__DIR__ . '/../../assets/upload/ktp_ortu');
+            $dir = realpath(_DIR_ . '/../../assets/upload/ktp_ortu');
             if (!$dir) {
-                mkdir(__DIR__ . '/../../assets/upload/ktp_ortu', 0777, true);
-                $dir = realpath(__DIR__ . '/../../assets/upload/ktp_ortu');
+                mkdir(_DIR_ . '/../../assets/upload/ktp_ortu', 0777, true);
+                $dir = realpath(_DIR_ . '/../../assets/upload/ktp_ortu');
             }
 
             $dest = $dir . "/ktp_ortu{$id}.{$ext}";
@@ -245,16 +245,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $lama = mysqli_fetch_assoc($query);
 
             if (!empty($lama['kps_pkh'])) {
-                $file_lama = realpath(__DIR__ . '/../../' . $lama['kps_pkh']);
+                $file_lama = realpath(_DIR_ . '/../../' . $lama['kps_pkh']);
                 if ($file_lama && is_file($file_lama)) {
                     unlink($file_lama);
                 }
             }
 
-            $dir = realpath(__DIR__ . '/../../assets/upload/kps_pkh');
+            $dir = realpath(_DIR_ . '/../../assets/upload/kps_pkh');
             if (!$dir) {
-                mkdir(__DIR__ . '/../../assets/upload/kps_pkh', 0777, true);
-                $dir = realpath(__DIR__ . '/../../assets/upload/kps_pkh');
+                mkdir(_DIR_ . '/../../assets/upload/kps_pkh', 0777, true);
+                $dir = realpath(_DIR_ . '/../../assets/upload/kps_pkh');
             }
 
             $dest = $dir . "/kps_pkh{$id}.{$ext}";
@@ -276,16 +276,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $lama = mysqli_fetch_assoc($query);
 
             if (!empty($lama['ijazah'])) {
-                $file_lama = realpath(__DIR__ . '/../../' . $lama['ijazah']);
+                $file_lama = realpath(_DIR_ . '/../../' . $lama['ijazah']);
                 if ($file_lama && is_file($file_lama)) {
                     unlink($file_lama);
                 }
             }
 
-            $dir = realpath(__DIR__ . '/../../assets/upload/ijazah');
+            $dir = realpath(_DIR_ . '/../../assets/upload/ijazah');
             if (!$dir) {
-                mkdir(__DIR__ . '/../../assets/upload/ijazah', 0777, true);
-                $dir = realpath(__DIR__ . '/../../assets/upload/ijazah');
+                mkdir(_DIR_ . '/../../assets/upload/ijazah', 0777, true);
+                $dir = realpath(_DIR_ . '/../../assets/upload/ijazah');
             }
 
             $dest = $dir . "/ijazah{$id}.{$ext}";
@@ -511,12 +511,18 @@ $no_daftarr = isset($_SESSION['id_daftar']) ? $_SESSION['id_daftar'] : '';
             <div class="form-group">
                 <label for="nama_siswa">Nama Siswa:</label>
                 <input type="text" id="nama_siswa" name="nama_siswa" value="<?= htmlspecialchars($data['nama_siswa'] ?? '') ?>" required>
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="nomor_induk">Nomor Induk Kependudukan (NIK):</label>
-                    <input type="text" id="nomor_induk" name="nomor_induk" value="<?= htmlspecialchars($data['nomor_induk'] ?? '') ?>" required>
-                </div>
+           <div class="form-row">
+    <div class="form-group">
+        <label for="nomor_induk">Nomor Induk Kependudukan (NIK):</label>
+        <input type="text" id="nomor_induk" name="nomor_induk"
+            value="<?= htmlspecialchars($data['nomor_induk'] ?? '') ?>"
+            required maxlength="16" pattern="\d*" inputmode="numeric" oninput="cekNIK()">
+        <small id="error-nik" style="color: red; display: none;">
+            NIK tidak boleh lebih dari 16 digit
+        </small>
+    </div>
+</div>
+
                 <div class="form-group">
                     <label for="jenis_kelamin">Jenis Kelamin:</label>
                     <select id="jenis_kelamin" name="jenis_kelamin" required>
@@ -825,6 +831,23 @@ $no_daftarr = isset($_SESSION['id_daftar']) ? $_SESSION['id_daftar'] : '';
     </div>
 
     <script>
+function cekNIK() {
+    const input = document.getElementById("nomor_induk");
+    const error = document.getElementById("error-nik");
+    const submitBtn = document.getElementById("submit-all");
+
+    // Hapus semua karakter non-angka
+    input.value = input.value.replace(/\D/g, '');
+
+    if (input.value.length > 16) {
+        error.style.display = "block";
+        submitBtn.disabled = true;
+    } else {
+        error.style.display = "none";
+        submitBtn.disabled = false;
+    }
+}
+
         function isiDataWali() {
             const waliDari = document.getElementById('wali_dari').value;
 

@@ -141,7 +141,7 @@
                                                 <div class="mt-3">
                                                     <strong>Total yang harus dibayar: Rp <span id="total-bayar">0</span></strong>
                                                     <?php if ($id_jurusan = 1) { ?>
-                                                        <p class="mt-3">note :minimal transaksi Rp.500.000</p>
+                                                        <p class="mt-3">note :minimal transaksi Rp.600.000</p>
                                                     <?php } ?>
                                                 </div>
                                                 <script>

@@ -263,7 +263,7 @@
                                                         <input type="hidden" class="form-control datepicker" name="tgl_daftar" required>
                                                         <div class="form-group col-md-6">
                                                             <label for="nisn">Username</label>
-                                                            <input type="text" maxlength="10" class="form-control" name="nisn" placeholder="Username" autocomplete="off" required>
+                                                            <input type="text" class="form-control" name="nisn" placeholder="Username" autocomplete="off" required>
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label for="inputPassword4">PASSWORD (Mohon Diingat!)</label>
@@ -1051,8 +1051,8 @@
 
 <script>
     $('.cd100').countdown100({
-        /*Set Endtime here*/
-        /*Endtime must be > current time*/
+        /Set Endtime here/
+        /Endtime must be > current time/
         endtimeMonth: <?= $diff->m ?>,
         endtimeDate: <?= $diff->d ?>,
         endtimeHours: <?= $diff->h ?>,
@@ -1061,5 +1061,5 @@
         timeZone: ""
         // ex:  timeZone: "America/New_York"
         //go to " http://momentjs.com/timezone/ " to get timezone
-    });
+    });
 </script>
